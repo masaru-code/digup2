@@ -1,0 +1,29 @@
+<div class = "seach-itiran">
+  <h1>みんなのやりたい事一覧</h1>
+  <%= form_with url: users_path,method: :get, local: true do |f| %>
+    <%= f.label :name, '検索したいユーザー名' %>
+    <%= f.text_field :name %>
+    <%= f.submit "送信" %>
+  <% end %>
+</div>
+
+<% @users.each do |user| %>
+  <div class= "minna-name">
+    <%= gravatar_for user, size: 50 %>
+    <h3><%= user.name %></h3>
+  </div>
+
+  <ul>
+    <% if user.tasks.todo.any? %>
+      <% user.tasks.todo.each do |task| %>
+        <div class="seach">
+          <h5><%= task.name %></h5>
+        </div>
+        <div class="btn-itiran">
+          <%= link_to "チャットルームへ", task_chat_rooms_path(task), class: "btn btn-primary" %>
+          <%= link_to "工程ページへ", task_work_schedules_path(task), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>

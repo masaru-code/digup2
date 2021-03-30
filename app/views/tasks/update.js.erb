@@ -1,0 +1,14 @@
+// モーダルを閉じる処理
+$("#taskModal").modal("hide");
+$('body').removeClass('modal-open');
+$('.modal-backdrop').remove();
+
+
+// Rails @status => true 画面の書き換え : false モーダルを再度表示
+// <% if @status %>
+$('[data-model_name="task"]').filter('[data-id="<%= @task.id %>"]').replaceWith("<%= j(render @task) %>");
+
+// <% else %>
+$("#modalArea").html("<%= j(render 'form', task: @task) %>")
+$("#modalArea").find(".modal").modal('show')
+// <% end %>

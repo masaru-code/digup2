@@ -1,0 +1,23 @@
+<div class="kaminari"> <%= paginate @users %> </div>
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <div class= "sinup-name">
+        <table>
+          <tr>
+            <th>&emsp;<%= gravatar_for user, size: 50 %>&emsp;&emsp;<%= user.name %></th>
+            <th><h3>status</h3></th>
+            <th><h6>
+                  <select name= "status-menu">
+                      <option value="HP">HP<%= user.hp %></option>
+                      <option value="攻撃">ATC<%= user.atc %></option>
+                      <option value="防御">DF<%= user.defence %></option>
+                  </select>
+              </h6>
+            </th>
+          </tr>
+        </table>
+      </div>
+    </li>
+  <% end %>
+</ul>

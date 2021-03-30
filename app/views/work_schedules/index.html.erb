@@ -1,0 +1,80 @@
+<% if @task.status == "todo" %>
+  <div class = "schedule-page">
+    <h1>工程ページ</h1>
+  </div>
+
+  <div class="card bg-light">
+    <table>
+      <th><h4><%= @task.name  %></h4></th>
+      <th><%= form_with model: @work_schedules, url: task_work_schedules_path(@task), local: true do |form| %>
+        <%= form.label :name, '工程入力' %>
+        <%= form.text_field :name %>
+        <%= form.submit "送信" %>
+      <% end %>
+      </th>
+    </table>
+
+    <table class="table-striped table-hover">
+      <tr>
+        <th width="8%">並び替え</th>
+        <th width="10%">番号</th>
+        <th width="60%">工程内容</th>
+        <th width="5%">終了</th>
+        <th width="17%" colspan="1"></th>
+      </tr>
+      <% @work_schedules.each_with_index do |schedule, position| %>
+        <tr>
+          <td></td>
+          <td><%= position + 1 %></td>
+          <td class = "text-left"><%= truncate(schedule.name, length: 100)  %></td>
+          <td><input type="checkbox" id="<%= dom_id(schedule) %>" class="check"></td>
+          <td><%= link_to '編集', edit_task_work_schedule_path(@task,schedule), class: "btn btn-success" %>
+          &emsp;&emsp;<%= link_to '削除', task_work_schedule_path(@task,schedule), method: :delete, class: "btn btn-danger", data: { confirm: '工程削除しますか?' } %></td>
+        </tr>
+      <% end %>
+    </table>
+
+    <table>
+      <tr>
+        <td><%= link_to "番号変更", "#", class: "btn btn-primary" %></td>
+        <td></td>
+        <td></td>
+        <td><%= link_to "やりたい事完了", task_done_path(@task), method: :patch, class: "btn btn-primary" %></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+<% end %>
+
+<% if @task.status == "done" %>
+  <div class = "schedule-page">
+  <h1>終了した工程ページ</h1>
+  </div>
+
+  <div class="card bg-light">
+  <table>
+    <th><h4><%= @task.name  %></h4></th>
+    <th><%= form_with model: @work_schedules, url: task_work_schedules_path(@task), local: true do |form| %>
+      <%= form.label :name, '工程入力' %>
+      <%= form.text_field :name %>
+      <%= form.submit "送信" %>
+    <% end %>
+    </th>
+  </table>
+
+  <table>
+    <tr>
+      <th>番号</th>
+      <th>工程内容</th>
+      <th colspan="1"></th>
+    </tr>
+    <% @work_schedules.each_with_index do |schedule, position| %>
+      <tr>
+        <td><%= position + 1 %></td>
+        <td><%= schedule.name %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  </div>
+<% end %>

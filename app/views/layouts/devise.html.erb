@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+    <%= render "layouts/header" %>
+    <%= render "layouts/flash" %>
+    <div class="new-contents wrapper">
+      <div class="jumbotron" style="box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2)">
+        <%= yield %>
+      </div>
+      <aside>
+        <%= image_tag "YK0I9A6205_TP_V.jpg" ,width:"650px" ,height:"650px" %>
+      </aside>
+    </div>
+    </div><!-- /.news-contents -->
+    <%= render "layouts/footer" %>
+</html>    

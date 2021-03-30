@@ -1,0 +1,21 @@
+<div class= "minna-name">
+  <%= gravatar_for @user, size: 50 %>
+  <h3><%= @user.name %></h3>
+</div>
+
+<ul>
+  <% if @user.tasks.todo.any? %>
+    <% @user.tasks.todo.each do |task| %>
+      <div class="seach">
+        <h5><%= task.name %></h5>
+      </div>
+      <div class="btn-itiran">
+        <%= link_to "チャットルームへ", task_chat_rooms_path(task), class: "btn btn-primary" %>
+        <%= link_to "工程ページへ", task_work_schedules_path(task), class: "btn btn-primary" %>
+        <% if current_user.tasks.include?(task) %>
+        <%= link_to "削除", task_path(task), method: :delete, data:{ confirm: "この行のやりたい事を削除しますか？"}, class: "btn btn-danger" %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</ul>

@@ -1,0 +1,14 @@
+<h1>工程編集</h1>
+<%= form_with model: [@task, @work_schedule] do |form| %>
+
+  <div class="field">
+  <%= form.label :工程名 %>
+  <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+  <%= form.submit "編集" %>
+  </div>
+<% end %>
+
+<%= link_to "工程ページへ", task_work_schedules_path(@task), class: "btn btn-success" %>

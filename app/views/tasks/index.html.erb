@@ -1,0 +1,9 @@
+<div class="task-title-area px-3">
+  <h2>工程作成    提案者：<%= @user.name %> <%= link_to "back",:back %></h2>
+  <%= link_to "#", title: "New", class: "btn p-0 text-dark", local: true do %>
+</div>
+  <div class="pt-3 p-1 text-nowrap task-index-area" id="tasksIndex">
+    <%= render @tasks %>
+  <% end %> 
+</div>
+

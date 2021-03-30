@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<%= render 'chat_header' %>
+
+<div class="chat-hyouji">
+  <% if @comments.any? %>
+  <ul>
+    <div class= "grava-name-coment">
+      <% @comments.each do |comment| %>
+      <li><%= gravatar_for comment.user, size: 50 %><p><%= comment.user&.name %></p>&nbsp;:&nbsp; <%= comment.content %>
+        <% if comment.image.attached? %>
+          <%= image_tag comment.image.variant(resize: "100x100") %>
+        <% end %>      
+      </li>
+      <% end %>
+    </div>
+  </ul>
+  <% end %>
+</div> 
+
+<%= render 'chat_footer' %>
+

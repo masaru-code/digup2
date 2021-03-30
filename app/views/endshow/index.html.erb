@@ -1,0 +1,13 @@
+<div class = "seach-itiran">
+  <h1>実行した事一覧</h1>
+  <div class="kaminari"> <%= paginate @tasks %> </div>
+
+<% @tasks.each do |done| %>
+  <div class = "ji-itiran">
+    <div class = "ji-koutei">
+      <h5><%= done.name %></h5>&emsp;&emsp;
+      <%= link_to "終了工程ページへ", task_work_schedules_path(done), class: "btn btn-primary" %>
+      
+    </div> 
+  </div>
+<% end %>

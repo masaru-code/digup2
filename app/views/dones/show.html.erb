@@ -1,0 +1,8 @@
+<div class="done_content" >
+    <h2>やりたい事: <%= @task.name %></h2>
+    <ul class="done_list">
+      <% @task.todos each do |done| %>
+        <li>工程: <%= done.content %></li>
+      <% end %>
+    </ul>
+</div>

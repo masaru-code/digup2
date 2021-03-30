@@ -1,0 +1,30 @@
+<div class="dighome wrapper">
+  <div class="dighome-left">
+    <%= link_to "ユーザー一覧", dig_home_dig_index_path, class: "btn btn-primary" %>
+    <%= link_to "実行したいこと", new_task_path, class: "btn btn-success" %>
+    <%= link_to "自分のページ", user_path(current_user), class: "btn btn-warning" %>
+    <%= link_to "みんなのやりたい事一覧", users_path, class: "btn btn-info" %>
+    <%= link_to "今まで実行した事", endshow_index_path, class: "btn btn-info" %>
+    <div class= "dighome-item">
+      <%= image_tag "1796066_s.jpg", width:"800px",hight:"800px", alt:"新しい扉" %>
+      <br>
+      <br>
+      <%= image_tag "hizasi_m.jpg", width:"800px",hight:"800px", alt:"木漏れ日" %>
+    </div> 
+  </div>
+  <aside-home>
+  <% @a=0 %> 
+  <p>最新の３０件</p>
+    <% @alltask.each do |task| %>
+      <% if @a<30 %>
+        <div class= "alltask">
+          <%= task.user&.name %>&nbsp:&emsp; <%= task.name %>
+          <% @a += 1 %> 
+        </div>
+      <% end %>
+    <% end %>
+  </aside-home>
+
+  <div class= "item">
+  </div> 
+</div>

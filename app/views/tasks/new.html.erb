@@ -1,0 +1,64 @@
+<div class= "task-new">
+  <p>やりたい事を入力　➡　チャットタイトルになります(1人１０個まで）</p>
+  <%= form_with model: @task, local: true do |form| %>
+  <%= form.label :name, 'やりたい事を入力' %>
+  <%= form.text_field :name %>
+  <%= form.submit "チャットルームへ" %>
+  <% end %>
+</div>
+
+<div class= "wrapper grid">
+  <div class= "item">
+    <%= image_tag "706460_s.jpg", width:"350px",hight:"350px", alt:"世界一周旅行" %>
+    <p>世界一周旅行に行きたい</p>
+  </div>    
+  <div class= "item">
+    <%= image_tag "1556061_s.jpg", width:"350px",hight:"350px",alt:"スポーツ" %>
+    <p>スポーツをしたい、サークルをつくりたい</p>
+  </div>          
+  <div class= "item">
+    <%= image_tag "1028007_s.jpg", width:"350px",hight:"350px",alt:"ゲーム" %>
+    <p>ゲームを作りたい、ゲームの攻略</p>
+  </div>          
+  <div class= "item">
+    <%= image_tag "3146890_s.jpg", width:"350px",hight:"350px",alt:"ファーストクラス" %>
+    <p>ファーストクラスに乗ってみたい</p>
+  </div>          
+  <div class= "item">
+    <%= image_tag "1927236_s.jpg", width:"350px",hight:"350px",alt:"ジムトレーニング" %>
+    <p>体づくりの目標がある</p>
+  </div>          
+  <div class= "item">
+    <%= image_tag "4029283_s.jpg", width:"350px",hight:"350px",alt:"他の人のを見て真似る" %>
+    <p>他の実行した事をみて参考にする</p>
+  </div>
+  <div class= "item">
+    <%= image_tag "1802919_s.jpg", width:"350px",hight:"350px",alt:"店を出す" %>
+    <p>店を出したい、ネットサイトで物を売りたい</p>
+  </div>      
+  <div class= "item">
+    <%= image_tag "3336161_s.jpg", width:"350px",hight:"350px",alt:"他の職場体験" %>
+    <p>他の職業体験してみたい</p>
+  </div>      
+  <div class= "item">
+    <%= image_tag "2067084_s.jpg", width:"350px",hight:"350px",alt:"馬を乗りたい" %>
+    <p>馬を自由に乗りこなしたい</p>
+  </div>      
+  <div class= "item">
+    <%= image_tag "1317236_s.jpg",width:"350px",hight:"350px", alt:"仕事の目標" %>
+    <p>仕事の目標、資格の目標がある</p>
+  </div>    
+  <div class= "item">
+    <%= image_tag "2138561_s.jpg",width:"350px",hight:"350px", alt:"学生体験" %>
+    <p>学生に戻りたい（学校を借りる、文化祭をする）</p>
+  </div>
+  <div class= "item">
+    <%= image_tag "3569432_s.jpg",width:"350px",hight:"350px", alt:"会いたい" %>
+    <p>会ってみたい人がいる</p>
+  </div> 
+  <div class= "item">
+    <iframe width="350" height="350" src="https://www.youtube.com/embed/aqa9h-nL-TA?start=10" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p>ユーチューブをはじめたい</p>
+  </div>
+</div>
+

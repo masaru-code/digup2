@@ -1,0 +1,8 @@
+<div class= "chat-footer">
+  <%= form_with model: @comment, url: task_chat_rooms_path(@task), local: true do |form| %>
+    <%= form.label :name, 'コメント入力' %>
+    <%= form.text_field :content %>
+    <%= form.file_field :image %>
+    <%= form.submit "送信" %>
+  <% end %>
+</div>
