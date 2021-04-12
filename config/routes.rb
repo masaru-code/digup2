@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   root 'dig_top#home'
-  root 'javasqript_ren'
   get 'dig_home/dighome'
   get 'dig_home/dig_index'
   get 'dig_top/setumei'

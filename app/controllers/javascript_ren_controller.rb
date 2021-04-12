@@ -1,2 +1,0 @@
-class JavascriptrenController < ApplicationController
-end

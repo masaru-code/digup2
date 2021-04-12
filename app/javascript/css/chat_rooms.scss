@@ -1,0 +1,71 @@
+// Place all the styles related to the chat_rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// ヘッダー
+.chat-wrapper{
+  position: fixed;
+  font-family: serif;
+  text-align: center;
+  background-image: url(../images/273020_s.jpg) ;
+  margin-top: -130px;
+}
+.chat-nav{
+  display: flex;
+}
+.chat-nav li{
+  list-style: none;
+  margin-left: 30px;
+  font-size: 1.25rem;
+  margin-top: 50px;
+}
+.chat-nav h3{
+  margin: 40px 650px 0px 80px;
+}
+.chat-name{
+  margin-top: -50px;
+}
+
+.chat-name h4{
+  margin: 15px 0px 15px 0px;
+  color: #010713;
+}
+// チャット表示
+.chat-hyouji{
+  /* フッタとヘッダー同じ高さに設定 */
+  margin-top: 100px;
+  margin-bottom: 60px;
+  /* 一番下までスクロールした時の余白 */
+  font-family: serif;
+}
+.chat-footer {
+  position: fixed;
+  bottom: 10px;
+  left: 600px;
+  background: rgb(91, 231, 114);
+}
+.grava-name-coment{
+  width: 1000px;
+  list-style: none;
+  text-aligin: left;
+}
+.grava-name-coment li{
+  margin-left: 50px;
+  border-bottom: solid 1px #dbedf0;
+  text-aligin: left;
+  display: flex;
+  align-items: center;
+}
+.grava-name-coment p{
+  padding-top: 16px;
+  color: #d58d9d;
+}
+.chat-side {
+  position: fixed;
+  bottom: 0;
+  margin: 20px 0px 0px 400px;
+  width: 100%;
+  font-family: serif;
+  height: 50px;
+  background: #fff;
+  color: #000;
+}

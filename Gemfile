@@ -14,6 +14,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'  
 gem 'acts_as_list'
 gem 'image_processing'
+gem 'stimulus-rails'
+gem 'gravtastic'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

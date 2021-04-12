@@ -1,0 +1,25 @@
+// dighomeページ
+.dighome{
+    height:700px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: serif;
+  }
+  .dighome-left{
+    padding-left: 40px;
+    width: 68%;
+  }
+  .dighome-left a{
+    margin-right: 10px;
+  }
+  .dighome-item{
+    margin-top: 30px;
+  }
+  .aside-home{
+    width: 38%;
+  }
+  .alltask{
+    color: #492c8f;
+    border-bottom: solid 1px #239fb4;
+  }
