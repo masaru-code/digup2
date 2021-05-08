@@ -1,20 +1,20 @@
-<header clas="page-header wraper">
+<header class="page-header wraper">
  <%  if user_signed_in?  %>
  <nav>
    <ul class="main-nav">
-       <h3><%= link_to "Top page", root_path %></h3>
-       <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-       <li><%= link_to "home", dig_home_dighome_path %></li>         
-       <li><%= link_to "sing_up", new_user_registration_path %></li>
+       <h3><%= link_to image_pack_tag("cooltext382693541664232.png", size:'200x50'), dig_home_dighome_path %></h3>
+       <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+       <li><%= link_to "ホーム", dig_home_dighome_path %></li>         
+       <li><%= link_to "プロフィール編集", profiles_path %></li>
    </ul>
  </nav>
 
  <% else %>
  <nav>
    <ul class="main-nav">
-     <h3><%= link_to "Top page", root_path %></h3> 
-     <li><%= link_to "Sign up", new_user_registration_path %></li>
-     <li><%= link_to "Log in", new_user_session_path %></li>
+     <h3><%= link_to image_pack_tag("cooltext382693541664232.png", size:'200x50'), dig_home_dighome_path %></h3>
+     <li><%= link_to "プロフィール編集", profiles_path %></li>
+     <li><%= link_to "ログイン", new_user_session_path %></li>
    </ul>
  </nav>
  <% end %>

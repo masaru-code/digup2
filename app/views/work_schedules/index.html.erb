@@ -26,7 +26,7 @@
         <tr>
           <td></td>
           <td><%= position + 1 %></td>
-          <td class = "text-left"><%= truncate(schedule.name, length: 100)  %></td>
+          <td class = "text-start"><%= truncate(schedule.name, length: 100)  %></td>
           <td><input type="checkbox" id="<%= dom_id(schedule) %>" class="check"></td>
           <td><%= link_to '編集', edit_task_work_schedule_path(@task,schedule), class: "btn btn-success" %>
           &emsp;&emsp;<%= link_to '削除', task_work_schedule_path(@task,schedule), method: :delete, class: "btn btn-danger", data: { confirm: '工程削除しますか?' } %></td>

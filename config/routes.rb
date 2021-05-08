@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   
   devise_for :users
 
+  resource :profiles
+
   resources :users do
     resources :tasks, only: %i(index)
   end

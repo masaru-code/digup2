@@ -1,12 +1,24 @@
 .digtop{
-  margin-top: 120px;
+  margin-top: 100px;
   font-family: serif;
 }
+.digtop h1{
+  color:chocolate;
+  font-size: 700%;
+  margin-bottom: 70px;
+}
+
 .digtop p{
   margin: 30px 0px 50px 0px;
+  color: #fff;
 }
-.touroku-btn{
+.touroku-btn a{
   margin-top: 30px;
+  width: 250px;
+  opacity: 0.8;
+}
+.main-nav a{
+  text-decoration: none;
 }
 // dig_top
 .big-bg{

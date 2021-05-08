@@ -1,0 +1,31 @@
+<div class="profile">
+  <table>
+    <tr>
+      <h2><th colspan="2">プロフィール編集画面</th></h2>
+    </tr>
+    <tr>
+      <td>
+        <div class="profile-image">
+          <% if current_user.avatar.attached? %>
+            <%= image_tag current_user.avatar.variant(resize: "100x100") %>     
+          <% else %>
+            <%= image_pack_tag '20200501_noimage.jpg', width: '100px', height: '100px' %>
+          <% end %>
+        </div>
+      </td>
+      <td>
+        <%= link_to "画像変更", "#", class: "btn btn-lg btn-success" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h2><%= current_user.name %></h2>
+      </td>
+      <td>
+        <%= link_to "名前変更", "#", class: "btn btn-lg btn-success" %>
+      </td>
+    </tr>
+  </table>
+
+  <%= link_to "パスワード変更", "#" %> 
+</div>

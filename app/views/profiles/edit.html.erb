@@ -1,0 +1,4 @@
+<%= form_with model: @user, url: profiles_path, method: :patch, local: true do |f| %>
+  <%= f.file_field :avatar %>
+  <%= f.submit '編集', class: 'btn btn-primary' %>
+<% end %>

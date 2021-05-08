@@ -1,4 +1,5 @@
 @import "layouts";
+@import "dighome";
 @import "bootstrap";
 @import "forms";
 @import "devise";
@@ -6,12 +7,17 @@
 @import "dig_top";
 @import "scaffolds";
 @import "tasks";
+@import "users_itiran";
+@import "work_schedules";
+@import "profile";
 @import url("https://use.fontawesome.com/releases/v5.8.2/css/all.css");
 
+body{
+  font-family: serif !important;
+}
 .mainpage-header{
-  width: 1100px;
-  background-image: url(../images/273020_s.jpg) ;
-  height: 80px;
+  background-image: url(../images/mogura.jpg) ;
+  height: 200px;
 }
 .container{
   padding: 0 4%;
@@ -37,32 +43,6 @@
 aside{
   margin-top: 50px;
   width: 55%;
-}
-// ユーザー一覧
-.users-itiran{
-  width: 1100px;
-  list-style: none;
-  font-family: serif;
-}
-.users-itiran h1{
-  text-align: center;
-  margin: 30px 0px 20px 0px;  
-}
-.kaminari{
-  margin-top: 10px;
-  margin-left: 600px;
-}
-.users{
-  list-style: none;
-  text-align: left;
-  margin-left: 200px;
-}
-.gravatar{
-  margin: 10px 80px 10px 100px;
-  list-style: none;
-  font-size: 200%;
-  border-bottom: solid 1px #dbedf0;
-  font-color: #6e0033
 }
 // みんなのやりたい事一覧
 .seach-itiran{
@@ -96,21 +76,7 @@ aside{
   color: #d58d9d;
   margin-top: 20px;
 }
-// やりたい事入力画面
-.task-new{
-  font-family: serif;
-  text-align: center;
-  margin-top: 10px;
-}
-.grid{
-  margin-left: 30px;
-  width: 1100px;
-  display: grid;
-  gap: 26px;
-  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-  margin-top: 6%;
-  margin-bottom: 50px;
-}
+
 // 提案者の工程ページ
 .task-title-area {
     font-family: serif;
@@ -118,20 +84,4 @@ aside{
 }
 .task-index-area {
     font-family: serif;
-}
-// dighomeページ
-.dighome{
-  width: 1100px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  font-family: serif;
-}
-.dighome-left{
-  height: 500px;
-  width: 85%;
-  // background-image: url(image/1796066_s.jpg) ;
-}
-.aside-home{
-  width: 15%;
 }
