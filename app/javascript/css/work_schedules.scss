@@ -17,3 +17,7 @@ table h4{
 .back-color{
   background-color: rgb(230, 106, 147);
 }
+.table-striped table-hover tr:hover{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  background-color: blanchedalmond;
+}

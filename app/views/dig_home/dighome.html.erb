@@ -1,10 +1,12 @@
+<div id="nav-btn">
+  <%= link_to "ユーザー一覧", dig_home_dig_index_path, class: "btn btn-primary" %>
+  <%= link_to "実行したいこと", new_task_path, class: "btn btn-success" %>
+  <%= link_to "自分のページ", user_path(current_user), class: "btn btn-warning" %>
+  <%= link_to "みんなのやりたい事一覧", users_path, class: "btn btn-info" %>
+  <%= link_to "今まで実行した事", endshow_index_path, class: "btn btn-secondary" %>
+</div>
 <div class="dighome wrapper">
   <div class="dighome-left">
-    <%= link_to "ユーザー一覧", dig_home_dig_index_path, class: "btn btn-primary" %>
-    <%= link_to "実行したいこと", new_task_path, class: "btn btn-success" %>
-    <%= link_to "自分のページ", user_path(current_user), class: "btn btn-warning" %>
-    <%= link_to "みんなのやりたい事一覧", users_path, class: "btn btn-info" %>
-    <%= link_to "今まで実行した事", endshow_index_path, class: "btn btn-secondary" %>
     <div class= "dighome-item">
       <%= image_pack_tag "1796066_s.jpg", width:"800px",hight:"800px", alt:"新しい扉" %>
       <br>
