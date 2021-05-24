@@ -1,21 +1,32 @@
-<div class= "minna-name">
-  <%= gravatar_for @user, size: 50 %>
-  <h3><%= @user.name %></h3>
+<div id="main-title">
+  <h1>自分のページ</h1>
 </div>
-
-<ul>
-  <% if @user.tasks.todo.any? %>
-    <% @user.tasks.todo.each do |task| %>
-      <div class="seach">
-        <h5><%= task.name %></h5>
-      </div>
-      <div class="btn-itiran">
-        <%= link_to "チャットルームへ", task_chat_rooms_path(task), class: "btn btn-primary" %>
-        <%= link_to "工程ページへ", task_work_schedules_path(task), class: "btn btn-success" %>
-        <% if current_user.tasks.include?(task) %>
-        <%= link_to "削除", task_path(task), method: :delete, data:{ confirm: "この行のやりたい事を削除しますか？"}, class: "btn btn-danger" %>
-        <% end %>
-      </div>
+<div id="minna-wrapper">
+  <div id= "minna-name">
+    <div id="profile-image">
+      <% if current_user.avatar.attached? %>
+        <%= image_tag current_user.avatar.variant(resize: "250x250"), width: '250px', height: '250px' %>     
+      <% else %>
+        <%= image_pack_tag '20200501_noimage.jpg', width: '250px', height: '250px' %>
+      <% end %>
+    </div>
+    <h3><%= @user.name %></h3>
+  </div>
+  <div id="profile-page-wrapper">
+    <% if @user.tasks.todo.any? %>
+      <% @user.tasks.todo.each do |task| %>
+        <div id="minnna-task-show">
+          <h5><%= task.name %></h5>
+          <div id="btn-itiran">
+            <%= link_to "チャットルームへ", task_chat_rooms_path(task), class: "btn btn-primary" %>
+            <%= link_to "工程ページへ", task_work_schedules_path(task), class: "btn btn-success" %>
+            <% if current_user.tasks.include?(task) %>
+              <%= link_to "削除", task_path(task), method: :delete, 
+              data:{ confirm: "この行のやりたい事を削除しますか？"}, class: "btn btn-danger" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </div>
+</div>

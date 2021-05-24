@@ -1,13 +1,45 @@
-.profile{
-  text-align: center;
+.profile-wrapper {
+ display: flex;
+ justify-content: space-between;
+ background-color: #f3eeee
 }
-.profile h2{
-  color: #32276b
+.profile-image {
+  padding: 80px 0px 0 300px;
+  width: 50%;
 }
-.profile h2{
-  color:brown;
+.profile-status {
+  width: 50%;
 }
-.profile-image{
-  width:40%;
-  height:40%;
+
+#profile-name h2{
+  padding: 135px 0px 0px 150px;
+  color: #367835;
+  font-size: 50px;
+}
+#profile-name h5 {
+  padding: 150px 0px 0px 50px;
+  color: #0d0e0d;
+  font-size: 30px;
+}
+.profile-status p {
+  padding: 0px 0px 0px 50px;
+  color: #0d0e0d;
+}
+.profile-status select {
+  margin: 100px 0px 0px 150px;
+  width: 200px;
+  height: 30px;
+}
+#profile-name {
+  display: flex;
+}
+#status-style {
+  display: flex;
+}
+#status-style h5 {
+  font-size: 30px;
+  padding: 100px 0px 0px 50px;
+}
+.profile-status a {
+  padding: 0px 0px 0px 50px;  
 }

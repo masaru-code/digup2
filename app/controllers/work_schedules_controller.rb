@@ -4,7 +4,7 @@ class WorkSchedulesController < ApplicationController
 
 
   def index
-    @work_schedules = @task.work_schedules
+    @work_schedules = @task.work_schedules.order(:position)
     @user = User.find(@task.user_id)
   end
 

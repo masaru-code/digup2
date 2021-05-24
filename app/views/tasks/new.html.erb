@@ -1,9 +1,10 @@
+<div id="main-title">
+  <h1>実行したい事作成</h1>
+</div>
 <div class= "task-new">
-  <div style="width: 500px">
-    <!-- <p>やりたい事を入力　➡　チャットタイトルになります(1人１０個まで）</p> -->
+  <div id="form">
     <%= form_with model: @task, local: true, class: 'input-group' do |form| %>
-      <%= form.label :name, 'やりたい事を入力', class: 'form-label' %>
-      <%= form.text_field :name, class: 'form-control' %>
+      <%= form.text_field :name, class: 'form-control', placeholder:"やりたいことを入力" %>
       <%= form.submit "チャットルームへ", class: 'input-group-text' %>
       <% end %>
   </div>

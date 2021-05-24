@@ -5,7 +5,7 @@ class ChatRoomsController < ApplicationController
   def index
      @comments = @task.comments
      @comment = Comment.new
-     render layout: false
+     #render layout: false
   end
   
   def create

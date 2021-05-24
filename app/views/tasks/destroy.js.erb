@@ -1,7 +1,0 @@
-// modalを閉じる処理
-$("#taskModal").modal("hide");
-$("body").removeClass("modal-open");
-$(".modal-backdrop").remove();
-
-// 画面の書き換え
-$('[data-model_name="task"]').filter('[data-id="<%= @task.id %>"]').remove();

@@ -11,9 +11,7 @@ table{
   font-family: serif;
   width: 100%;
 }
-table h4{
-  color:brown
-}
+
 .back-color{
   background-color: rgb(230, 106, 147);
 }
@@ -23,4 +21,21 @@ table h4{
 }
 .table-striped tbody tr.done {
   background-color: rgb(156, 55, 55);
+}
+table .table-striped-nav tr:first-child {
+  background-color: #9592a7;
+}
+.schedule-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+.schedule-form h4 {
+  color:brown;
+  margin-left: 200px;
+  padding-top: 30px;
+}
+.schedule-form .form {
+  width: 500px;
+  padding-top: 30px;
+  padding-left: 50px;
 }

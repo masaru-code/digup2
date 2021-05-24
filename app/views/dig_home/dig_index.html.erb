@@ -1,7 +1,24 @@
-<div class= "users-itiran">
+<div id="main-title">
   <h1>登録ユーザー一覧</h1>
-
-  <p>登録ユーザー:<%= User.all.size %>/招待ユーザー :3</p>
-  
-  <%= render 'dig_home/users/index' %>
 </div>
+
+<div =id="all-user-count">  <p>登録ユーザー:<%= User.all.size %>/招待ユーザー :3</p></div>
+<div class="kaminari"> <%= paginate @users %> </div>
+
+
+<% @users.each do |user| %>
+  <li>
+    <div class="users-view">
+      <div class= "users-image">
+        <% if user.avatar.attached? %>
+          <%= image_tag user.avatar.variant(resize: "80x80"), width: '80px', height: '80px' %>     
+        <% else %>
+          <%= image_pack_tag '20200501_noimage.jpg', width: '80px', height: '80px' %>
+        <% end %>
+      </div>
+      <div class="user-index-right">
+        <h2><%= user.name %></h2>
+      </div>
+    </div>
+  </li>
+<% end %>

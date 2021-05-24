@@ -1,3 +1,6 @@
+<div id="main-title">
+  <h1>ホーム</h1>
+</div>
 <div id="nav-btn">
   <%= link_to "ユーザー一覧", dig_home_dig_index_path, class: "btn btn-primary" %>
   <%= link_to "実行したいこと", new_task_path, class: "btn btn-success" %>
@@ -6,27 +9,44 @@
   <%= link_to "今まで実行した事", endshow_index_path, class: "btn btn-secondary" %>
 </div>
 <div class="dighome wrapper">
-  <div class="dighome-left">
-    <div class= "dighome-item">
-      <%= image_pack_tag "1796066_s.jpg", width:"800px",hight:"800px", alt:"新しい扉" %>
-      <br>
-      <br>
-      <%= image_pack_tag "hizasi_m.jpg", width:"800px",hight:"800px", alt:"木漏れ日" %>
-    </div> 
+  <div class ="dighome-menu">
+    <p>追加機能メニュー</p>
+    <p>簡単なゲーム兼プログラム練習ページ等</P>
   </div>
-  <aside-home>
+  <div class="Introduction">
+    <%= image_pack_tag "mogura-icon.jpg", width:"100px",height:"80px", alt:"モグラアイコン" %>
+    <br><br>
+    <h4>名前の由来はやりたいと思ってた事をDigup（掘り起こす）</h4>
+    <p>ホームページは見栄え、機能もよくしていきます（その日の最初のログインの人は無料サイトなのですごく遅いです）</p>
+      <div class= "dighome-item">
+        <%= image_pack_tag "1796066_s.jpg", width:"640px",hight:"400px", alt:"新しい扉" %>
+        <br><br>
+        <h4>使用例</h4>
+        <p>自分のやりたい事の整理だけで使ってくれてもいいし</p>
+        <p>一緒にやってるゲームの掲示板的につかってもいいし</p>
+        <p>他の人の実行した事の工程を見て自分もそれを真似てやってもいいし</p>
+
+        <br>
+        <%= image_pack_tag "hizasi_m.jpg", width:"640px",hight:"400px", alt:"木漏れ日" %>
+        <br><br>
+        <h4>目標は</h4>
+        <p>こんなイベントをしたいから特設サイトを作りたいとか<p>
+        <p>こんなサービスがあったら面白そうとか</p>
+        <p>やりたい事を実現するのにどんなサイトやアプリがあれば実現しやすい</p>
+        <p>という希望があれば、作れるようになれれば面白いかなと</p>
+      </div>
+  </div>
+
+  <aside>
   <% @a=0 %> 
-  <p>最新の３０件</p>
+  <h5>最新の３０件</h5>
     <% @alltask.each do |task| %>
       <% if @a<30 %>
         <div class= "alltask">
-          <%= task.user&.name %>&nbsp:&emsp; <%= task.name %>
+          <div class="aside-name"><%= task.user&.name %></div>&nbsp:&emsp;  <div class="aside-task-name"><%= task.name %></div>
           <% @a += 1 %> 
         </div>
       <% end %>
     <% end %>
-  </aside-home>
-
-  <div class= "item">
-  </div> 
+  </aside>
 </div>

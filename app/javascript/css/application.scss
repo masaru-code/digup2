@@ -11,75 +11,88 @@
 @import "work_schedules";
 @import "profile";
 @import url("https://use.fontawesome.com/releases/v5.8.2/css/all.css");
+@import "setumei";
 
 body{
   font-family: serif !important;
 }
+#modalArea {
+  list-style: none;
+  margin: 0px 0px 100px 0px;
+}
 .mainpage-header wraper{
-  position: fixed;
+
 }
 .mainpage-header{
   background-image: url(../images/mogura.jpg) ;
   height: 200px;
+  border-bottom: solid 3px #d5d9f1;
 }
 .container{
   padding: 0 4%;
   text-align: center;
 }
+#main-title {
+  position: absolute;
+  top: 100px;
+  left: 640px;
+  color: #ca2d0a;
+  font-size: 30px;
+}
 /*説明*/
 .setumei-page{
-  float: left;
-  margin-left: 50px;
-        /* 背景をグラデーションにする */
-  background: linear-gradient(45deg, #10100E, #A72F37);
-  color:#cccccc;
+
 }
 // sinup Login
 .new-contents{
   display: flex;
-  justify-content: space-between;
 }
 .jumbotron{
   width: 40%;
   margin: 50px 0px 0px 20px;
 }
-aside{
-  margin-top: 50px;
-  width: 55%;
-}
 // みんなのやりたい事一覧
 .seach-itiran{
-  margin-left: 450px;
-  list-style: none;
-  font-family: serif;
+  width: 400px;
+  margin: 30px 0px 0px 50px;
 }
 .seach-itiran h1{
   margin: 50px 0px 20px 0px;  
 }
-
-.seach {
-  padding: 10px 10px 10px 50px;
-  text-align: center;
-  list-style: none;
-  font-family: serif;
-  border-top: solid 1px #dbedf0;
-  
+#btn-itiran {
+  width: 40%;
+  text-align: right;
+  margin-right: 110px;
+  padding: 15px 15px 15px 15px;
 }
-.btn-itiran{
-  text-align: center;
-  margin-left: 40px;
-  font-family: serif;
-  padding: 5px 15px 15px 15px;
+#minna-wrapper {
+  margin: 0px 0px 0px 400px;
 }
-.minna-name{
-  display: flex;
-  margin: 15px 0px 15px 0px;
+#minna-name {
+  display: block;
+  margin: 20px 0px 40px 0px;
 }
-.minna-name h3{
+#minna-name h3{
   color: #d58d9d;
-  margin-top: 20px;
+  padding: 10px 0px 0px 300px;
+  font-size: 40px;
 }
-
+#minnna-task-show {
+  width: 100%;
+  display: flex;
+  border-bottom: solid 1px #dbedf0;
+}
+#profile-image {
+  margin: 0px 0px 0px 230px;
+}
+#minnna-task-show h5 {
+  width: 60%;
+  color: #665558;
+  padding: 25px 0px 0px 50px;
+}
+#minnna-task-show a {
+  padding: 0px 0px 0px 0px;
+}
 // 提案者の工程ページ
 .task-title-area {
     font-family: serif;
@@ -87,4 +100,12 @@ aside{
 }
 .task-index-area {
     font-family: serif;
+}
+footer {
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  background-color: rgb(41, 39, 39);
+  color: white;
+  width: 100%;
 }

@@ -1,29 +1,41 @@
-<!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<head>
-    <%= csrf_meta_tags %>
+<div id="current-taskpage">
+  <h3><%= link_to "提案者　工程作成ページへ", task_work_schedules_path(@task), class: "btn btn-primary" %></h3>
+</div>
 
-    <%= stylesheet_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+<div class= "chat-name">
+  <h4>提案者:<%= @task.user&.name %></h4>&emsp;&emsp;
+  <div id="task-title"><%= @task.name %></div>
+</div>
 
-<%= render 'chat_header' %>
+<% if @comments.any? %>
+<ul>
+  <div class= "chat-comment">
+    <% @comments.each do |comment| %>
+    <li>
+      <div class="comment-image">
+        <% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar.variant(resize: "80x80") %>     
+        <% else %>
+          <%= image_pack_tag '20200501_noimage.jpg', width: '80px', height: '80px' %>
+        <% end %>
+      </div>
+      <div id="comment-name">
+        <%= comment.user&.name %>
+      </div>
+      <div id="comment">
+        <%= comment.content %>
+      </div>
+    </li>
+    <% end %>
+  </div>
+</ul>
+<% end %>
 
-<div class="chat-hyouji">
-  <% if @comments.any? %>
-  <ul>
-    <div class= "grava-name-coment">
-      <% @comments.each do |comment| %>
-      <li><%= gravatar_for comment.user, size: 50 %><p><%= comment.user&.name %></p>&nbsp;:&nbsp; <%= comment.content %>
-        <% if comment.image.attached? %>
-          <%= image_pack_tag comment.image.variant(resize: "100x100") %>
-        <% end %>      
-      </li>
-      <% end %>
-    </div>
-  </ul>
+<div class= "chat-footer">
+  <%= form_with model: @comment, url: task_chat_rooms_path(@task), local: true, class: 'input-group' do |form| %>
+    <%= form.text_field :content, class: 'form-control', placeholder:"コメントを入力" %>
+    <%= form.submit "送信", class: 'input-group-text' %>
+    <%= form.file_field :avatar, class: 'form-control', placeholder:"画像なしでもＯＫ" %>
+    <%= form.submit "画像送信", class: 'input-group-text' %>
   <% end %>
-</div> 
-
-<%= render 'chat_footer' %>
-
+</div>

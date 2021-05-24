@@ -1,9 +1,10 @@
+<div id="main-title">
+  <h1>みんなのやりたい事検索</h1>
+</div>
 <div class = "seach-itiran">
-  <h1>みんなのやりたい事一覧</h1>
-  <%= form_with url: users_path,method: :get, local: true do |f| %>
-    <%= f.label :name, '検索したいユーザー名' %>
-    <%= f.text_field :name %>
-    <%= f.submit "送信" %>
+  <%= form_with url: users_path,method: :get, local: true, class: 'input-group' do |f| %>
+    <%= f.text_field :name, class: 'form-control', placeholder:"検索したいユーザー名" %>
+    <%= f.submit "送信", class: 'input-group-text' %>
   <% end %>
 </div>
 
