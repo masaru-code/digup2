@@ -13,8 +13,8 @@
     <% @comments.each do |comment| %>
     <li>
       <div class="comment-image">
-        <% if current_user.avatar.attached? %>
-          <%= image_tag current_user.avatar.variant(resize: "80x80") %>     
+        <% if comment.user.avatar.attached? %>
+          <%= image_tag comment.user.avatar.variant(resize: "80x80"), width: '80px', height: '80px' %>     
         <% else %>
           <%= image_pack_tag '20200501_noimage.jpg', width: '80px', height: '80px' %>
         <% end %>
