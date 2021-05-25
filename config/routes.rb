@@ -24,5 +24,9 @@ Rails.application.routes.draw do
     resources :work_schedules #resource 単数でｉｄを作らない
     resource :done, only: %i(index update)
   end
+
+  namespace :work_schedules do
+    resources :positions, only: %i(update)
+  end
 end
 
