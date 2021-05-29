@@ -27,19 +27,22 @@
           <tr deta-controller="work-schedule" data-id="<%= schedule.id %>">
             <td></td>
             <td class = "text-start"><%= truncate(schedule.name, length: 100)  %></td>
-            <td>
-              <%= form_with model: [@task, schedule], id: dom_id(schedule), data: { controller: 'work-schedule' } do |form| %>
-                <%= form.check_box :checkbox, class: 'check', data: { action: 'work-schedule#check' } %>
-              <% end %>
-            </td>
-            <td><%= link_to '編集', edit_task_work_schedule_path(@task,schedule), class: "btn btn-success" %>
-            &emsp;&emsp;<%= link_to '削除', task_work_schedule_path(@task,schedule), method: :delete, class: "btn btn-danger", data: { confirm: '工程削除しますか?' } %></td>
+            <% if current_user == @task.user %>
+              <td>  
+                <%= form_with model: [@task, schedule], id: dom_id(schedule), data: { controller: 'work-schedule' } do |form| %>
+                  <%= form.check_box :checkbox, class: 'check', data: { action: 'work-schedule#check' } %>
+                <% end %>
+              </td>
+              <td><%= link_to '編集', edit_task_work_schedule_path(@task,schedule), class: "btn btn-success" %>
+              &emsp;&emsp;<%= link_to '削除', task_work_schedule_path(@task,schedule), method: :delete, class: "btn btn-danger", data: { confirm: '工程削除しますか?' } %></td>
+            <% end %>
           </tr>
       <% end %>
       </tbody>
     </table>
-
-    <%= link_to "やりたい事完了", task_done_path(@task), method: :patch, class: "btn btn-primary" %></td>
+    <% if current_user == @task.user %>
+      <%= link_to "やりたい事完了", task_done_path(@task), method: :patch, class: "btn btn-primary" %></td>
+    <% end %>
   </div>
 <% end %>
 
