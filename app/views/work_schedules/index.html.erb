@@ -5,7 +5,7 @@
   <div class="schedule-form">
     <h4><%= @task.name  %></h4>
     <div class="form">
-      <%= form_with model: @work_schedules, url: task_work_schedules_path(@task), local: true, class: 'input-group' do |form| %>
+      <%= form_with model:WorkSchedule.new, url: task_work_schedules_path(@task), local: true, class: 'input-group' do |form| %>
       <%= form.text_field :name, class: 'form-control', placeholder:"工程内容を入力" %>
       <%= form.submit "送信", class: 'input-group-text' %>
       <% end %>
@@ -22,12 +22,16 @@
           <th width="17%" colspan="1"></th>
         </tr>
       </div>
-      <tbody data-controller="drag-sort" data-drag-sort-url="/work_schedules/positions/:id">
+      <tbody data-controller="drag-sort" data-drag-sort-url="/work_schedules/positions/:id" data-drag-sort-draggable="<%= @task.user == current_user ? 'enable' : 'disable' %>">
       <% @work_schedules.each do |schedule| %>
           <tr deta-controller="work-schedule" data-id="<%= schedule.id %>">
             <td></td>
             <td class = "text-start"><%= truncate(schedule.name, length: 100)  %></td>
-            <td><input type="checkbox" id="<%= dom_id(schedule) %>" class="check"></td>
+            <td>
+              <%= form_with model: [@task, schedule], id: dom_id(schedule), data: { controller: 'work-schedule' } do |form| %>
+                <%= form.check_box :checkbox, class: 'check', data: { action: 'work-schedule#check' } %>
+              <% end %>
+            </td>
             <td><%= link_to '編集', edit_task_work_schedule_path(@task,schedule), class: "btn btn-success" %>
             &emsp;&emsp;<%= link_to '削除', task_work_schedule_path(@task,schedule), method: :delete, class: "btn btn-danger", data: { confirm: '工程削除しますか?' } %></td>
           </tr>

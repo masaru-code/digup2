@@ -4,10 +4,13 @@ import Rails from "@rails/ujs"
 
 export default class extends Controller {
   connect() {
-    this.sortable = Sortable.create(this.element, {
-      onEnd: this.end.bind(this)
-    })
-  }
+    const draggable = this.data.get('draggable');
+    if (draggable == 'enable') {
+      this.sortable = Sortable.create(this.element, {
+        onEnd: this.end.bind(this)
+      })
+    }
+  }s
 
   end(event) {
     const id = event.item.dataset.id
