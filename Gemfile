@@ -16,6 +16,7 @@ gem 'acts_as_list'
 gem 'image_processing'
 gem 'stimulus-rails'
 gem 'gravtastic'
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
