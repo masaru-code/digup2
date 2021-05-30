@@ -4,11 +4,7 @@
 
 <div class="profile-wrapper">
   <div class="profile-image">
-    <% if current_user.avatar.attached? %>
-      <%= image_tag current_user.avatar.variant(resize: "400x400"), width: '400px', height: '400px' %>     
-    <% else %>
-      <%= image_pack_tag '20200501_noimage.jpg', width: '400px', height: '400px' %>
-    <% end %>
+    <%= gravatar_for @user, size: 400 %>
   </div>
   <div class ="profile-status">
     <div id="profile-name">
