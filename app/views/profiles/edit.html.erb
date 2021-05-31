@@ -2,10 +2,15 @@
   <h1>プロフィール編集</h1>
 </div>
 
-<p>アイコン画像編集gravater<%= "https://ja.gravatar.com/" %></p>
+<div class="profile-edit-wrapper">
+  <div class="email-wrapper">
+    <div id="email-p"><p>gravatarのemailを入力してください</p></div>
 
-
-<%= form_with model: @user, url: profiles_path, method: :patch, local: true do |f| %>
-  <%= f.file_field :avater %>
-  <%= f.submit '編集', class: 'btn btn-primary' %>
-<% end %>
+    <div id="email-form">
+      <%= form_with model: @user, url: profiles_path, method: :patch, local: true do |f| %>
+        <%= f.text_field :email, class: 'form-control', placeholder:"メールアドレス入力" %>
+        <%= f.submit "送信", class: 'input-group-text' %>
+      <% end %>  
+    </div>
+  </div>
+</div>
