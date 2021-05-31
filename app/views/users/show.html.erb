@@ -4,11 +4,7 @@
 <div id="minna-wrapper">
   <div id= "minna-name">
     <div id="profile-image">
-      <% if current_user.avatar.attached? %>
-        <%= image_tag current_user.avatar.variant(resize: "250x250"), width: '250px', height: '250px' %>     
-      <% else %>
-        <%= image_pack_tag '20200501_noimage.jpg', width: '250px', height: '250px' %>
-      <% end %>
+      <%= gravatar_for @user, size: 250 %>
     </div>
     <h3><%= @user.name %></h3>
   </div>

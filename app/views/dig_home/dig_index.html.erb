@@ -10,11 +10,7 @@
   <li>
     <div class="users-view">
       <div class= "users-image">
-        <% if user.avatar.attached? %>
-          <%= image_tag user.avatar.variant(resize: "80x80"), width: '80px', height: '80px' %>     
-        <% else %>
-          <%= image_pack_tag '20200501_noimage.jpg', width: '80px', height: '80px' %>
-        <% end %>
+        <%= gravatar_for user, size: 80 %>
       </div>
       <div class="user-index-right">
         <h2><%= user.name %></h2>

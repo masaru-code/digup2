@@ -24,7 +24,7 @@ class ProfilesController < AuthController
   end
 
   def profile_params
-    params.require(:user).permit(:avatar)
+    params.require(:user).permit(:avatar, :email)
   end
 
 end
