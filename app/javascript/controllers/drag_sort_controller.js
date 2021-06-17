@@ -10,7 +10,7 @@ export default class extends Controller {
         onEnd: this.end.bind(this)
       })
     }
-  }s
+  }
 
   end(event) {
     const id = event.item.dataset.id
