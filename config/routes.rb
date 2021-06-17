@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resource :profiles
+  resources :game, only: %i(index)
 
   resources :users do
     resources :tasks, only: %i(index)
