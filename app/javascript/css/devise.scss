@@ -2,3 +2,19 @@ input[type="submit"][value="Cancel my account"] {
   @extend .btn !optional;
   @extend .btn-danger !optional;
 }
+
+.sintouroku {
+  padding: 30px 20px 20px 20px;
+}
+.sintouroku h2 {
+  text-align:center;
+}
+.field {
+  padding: 20px 0px 0px 0px;
+}
+.actions {
+  margin-top: 20px;
+}
+.actions input {
+  width: 565px;
+}
