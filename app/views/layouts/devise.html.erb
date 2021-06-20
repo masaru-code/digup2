@@ -10,12 +10,12 @@
   </head>
     <%= render "layouts/header" %>
     <div class="new-contents wrapper">
-      <div class="jumbotron" style="box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2)">
+      <div id="logform" class="card bg-light">
         <%= yield %>
       </div>
-      <aside>
+      <aside-login>
         <%= image_pack_tag "YK0I9A6205_TP_V.jpg" ,width:"500px" ,height:"500px" %>
-      </aside>
+      </aside-login>
     </div>
     </div><!-- /.news-contents -->
     <%= render "layouts/footer" %>

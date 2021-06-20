@@ -48,9 +48,13 @@ body{
 .new-contents{
   display: flex;
 }
-.jumbotron{
+#logform {
   width: 40%;
-  margin: 50px 0px 0px 20px;
+  margin: 50px 0px 0px 120px;
+}
+aside-login {
+  margin: 50px 20px 0px 50px;
+  width: 40%;
 }
 // みんなのやりたい事一覧
 .seach-itiran{
@@ -75,7 +79,7 @@ body{
 }
 #minna-name h3{
   color: #d58d9d;
-  padding: 10px 0px 0px 300px;
+  padding: 20px 0px 0px 230px;
   font-size: 40px;
 }
 #minnna-task-show {
