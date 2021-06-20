@@ -5,10 +5,12 @@
   <div class="schedule-form">
     <h4><%= @task.name  %></h4>
     <div class="form">
-      <%= form_with model:WorkSchedule.new, url: task_work_schedules_path(@task), local: true, class: 'input-group' do |form| %>
-      <%= form.text_field :name, class: 'form-control', placeholder:"工程内容を入力" %>
-      <%= form.submit "送信", class: 'input-group-text' %>
-      <% end %>
+      <% if current_user == @task.user %>
+        <%= form_with model:WorkSchedule.new, url: task_work_schedules_path(@task), local: true, class: 'input-group' do |form| %>
+          <%= form.text_field :name, class: 'form-control', placeholder:"工程内容を入力" %>
+          <%= form.submit "送信", class: 'input-group-text' %>
+        <% end %>
+      <% end %>  
     </div>
   </div>
 
