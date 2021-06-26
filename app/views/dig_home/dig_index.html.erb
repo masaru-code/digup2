@@ -4,13 +4,6 @@
 
 <div id="all-user-count">
   <p>登録ユーザー:<%= User.all.size %></p><p>招待人数<%= @user.invitation %></p>
-  <% if @user %>
-    <%= form_with model: @user do |f| %>
-      <%= f.label :invitation, "招待人数" %>
-      <%= f.number_field :invitation %>
-      <%= f.submit "送信" %>
-    <% end %>
-  <% end %>
 </div>
 <div class="kaminari"> <%= paginate @users %> </div>
 
