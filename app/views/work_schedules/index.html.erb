@@ -25,9 +25,11 @@
         </tr>
       </div>
       <tbody data-controller="drag-sort" data-drag-sort-url="/work_schedules/positions/:id" data-drag-sort-draggable="<%= @task.user == current_user ? 'enable' : 'disable' %>">
+      <% @number = 0 %>
       <% @work_schedules.each do |schedule| %>
-          <tr deta-controller="work-schedule" data-id="<%= schedule.id %>">
-            <td></td>
+          <tr data-id="<%= schedule.id %>">
+            <% @number += 1 %>
+            <td><%= @number %></td>
             <td class = "text-start"><%= truncate(schedule.name, length: 100)  %></td>
             <% if current_user == @task.user %>
               <td>  

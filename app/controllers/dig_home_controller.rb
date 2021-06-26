@@ -10,6 +10,7 @@ PER = 5
 
   def dig_index
     @users = User.order(created_at: :asc).page(params[:page]).per(PER)
+    @user = User.first
   end
   
   def show

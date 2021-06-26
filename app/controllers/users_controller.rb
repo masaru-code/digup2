@@ -6,8 +6,15 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = current_user
+    @user = User.find(params[:id])
   end
+
+  def update
+    @user_invitation = User.first.invitation
+    @user_invitation = params[:invitation]
+    redirect_to dig_home_dig_index_path, notice: "編集されました"
+  end
+
   
 end
 
