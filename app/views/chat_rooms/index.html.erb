@@ -13,7 +13,7 @@
     <% @comments.each do |comment| %>
     <li>
       <div class="comment-image">
-        <%= gravatar_for @task.user, size: 80 %>
+        <%= gravatar_for comment.user, size: 80 %>
       </div>
       <div id="comment-name">
         <%= comment.user&.name %>
