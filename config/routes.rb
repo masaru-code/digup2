@@ -11,14 +11,14 @@ Rails.application.routes.draw do
   devise_for :users
 
   resource :profiles
-  resources :game, only: %i(index)
+  resources :game, only: %i(index show)
 
   resources :users do
     resources :tasks, only: %i(index)
   end
   
   resources :endshow, only: %i(index)
-  resources :chat_rooms, only: %i(index,destroy)
+  resources :chat_rooms, only: %i(index destroy)
 
   resources :tasks do
     resources :chat_rooms, only: %i(index create)
