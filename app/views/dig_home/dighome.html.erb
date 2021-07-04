@@ -12,7 +12,8 @@
   <div class ="dighome-menu">
     <p>追加機能メニュー</p>
     <p>簡単なゲーム</P>
-    <%= link_to "簡単な戦闘", game_index_path %>
+    <%= link_to "簡単な戦闘", game_index_path %><br>
+    <%= link_to "ゲームの種", game_path(current_user) %>
   </div>
   <div class="Introduction">
     <%= image_pack_tag "mogura-icon.jpg", width:"100px",height:"80px", alt:"モグラアイコン" %>
